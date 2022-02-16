@@ -15,7 +15,8 @@ __pycache__
 Thumbs.db
 .DS_Store
 probe.py
-
+db.*
+*.db
 # config  files
 auth.py
 config.py
