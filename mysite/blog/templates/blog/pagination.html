@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div class="container">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+
+              {% if page.has_previous %}
+              <li class="page-item"><a class="page-link" href="?page=1">first</a></li>
+              <li class="page-item"><a class="page-link" href="?page={{page.previous_page_number}}">Previous</a></li>
+              {% endif %}
+              {% if page.number == 1 %}
+              <li class="page-item active"><a class="page-link" href="?page=page.number">1</a></li>
+              <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+              <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+              {% elif page.number == 2 %}
+              <li class="page-item "><a class="page-link" href="?page=1">1</a></li>
+              <li class="page-item active"><a class="page-link" href="?page=2">2</a></li>
+              <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+              {% elif page.number == 3 %}
+              <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+              <li class="page-item active"><a class="page-link" href="?page=3">3</a></li>
+              <li class="page-item"><a class="page-link" href="?page=4">4</a></li>
+              {% elif page.number == 4 %}
+              <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+              <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+              <li class="page-item active"><a class="page-link" href="?page=4">4</a></li>
+              {% endif %}
+              {% if page.has_next %}
+              <li class="page-item"><a class="page-link" href="?page={{ page.next_page_number }}">Next</a></li>
+              <li class="page-item"><a class="page-link" href="?page=4">last</a></li>
+              {% endif %}
+            </ul>
+          </nav>
+
+
+
+    </div>
+
+</body>
+
+</html>
